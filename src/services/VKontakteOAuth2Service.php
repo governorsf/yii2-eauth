@@ -42,6 +42,7 @@ class VKontakteOAuth2Service extends Service
 		$tokenData = $this->getAccessTokenData();
 		$info = $this->makeSignedRequest('users.get.json', [
 			'query' => [
+                'v' => '4',
 				'uids' => $tokenData['params']['user_id'],
 				'fields' => '', // uid, first_name and last_name is always available
 				//'fields' => 'nickname, sex, bdate, city, country, timezone, photo, photo_medium, photo_big, photo_rec',
